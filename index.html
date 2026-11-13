@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JEZERO | Mars Exploration &amp; EVA Planning System</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="map.css">
 </head>
 <body>
 
@@ -45,9 +47,22 @@
 
     <section id="map" class="panel">
       <h2>2. Interactive Jezero Map</h2>
-      <p class="coming">Coming soon: a map you can zoom and move, with switchable layers.</p>
-      <div id="jezero-map" class="map-box">
-        <p>The map will appear here.</p>
+      <p class="map-intro"><span class="badge badge-real">REAL DATA</span> Orbital imagery of Mars published by NASA and USGS, centred on Jezero Crater. Drag to move, pinch or use the + and &minus; buttons to zoom, and tap anywhere to read its coordinates.</p>
+      <div id="jezero-map" class="map-box"></div>
+      <div class="map-info">
+        <h3>Tapped position</h3>
+        <p id="map-tap-out" class="map-readout" aria-live="polite">Tap the map to read coordinates.</p>
+        <p id="map-tap-note" class="map-small"></p>
+
+        <h3>Imagery now shown</h3>
+        <p id="map-src-name" class="map-readout"></p>
+        <p id="map-src-detail" class="map-small"></p>
+        <p class="map-small"><span class="badge badge-calc">CALCULATION</span><span id="map-src-scale"></span></p>
+        <p id="map-status" class="map-small">Tiles: waiting&hellip;</p>
+
+        <h3>About this map</h3>
+        <p class="map-small">A plain latitude/longitude grid (equirectangular) with 256-pixel tiles, as served by NASA Solar System Treks. It is not the Earth &ldquo;Web Mercator&rdquo; map. The scale is calculated with the Mars radius of 3,396,190 m (USGS metadata).</p>
+        <p class="map-small">The dashed orange rectangle outlines the area covered by a USGS 6 m/pixel context-camera mosaic of Jezero. It is an outline only: it is not the crater rim, and that 6 m image is not loaded here.</p>
       </div>
     </section>
 
@@ -91,6 +106,10 @@
   <footer class="footer">
     <p>Student educational project. Not affiliated with or endorsed by NASA or USGS. Work in progress.</p>
   </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+  <script src="map.js"></script>
 
 </body>
 </html>

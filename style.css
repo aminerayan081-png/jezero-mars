@@ -1,0 +1,263 @@
+/* =========================================================
+   JEZERO - style.css
+   Planetary exploration / mission-control look.
+   Colours are set once here, then reused everywhere.
+   ========================================================= */
+
+:root {
+  --bg: #121314;            /* deep graphite background */
+  --panel: #1b1c1e;         /* card background */
+  --panel-2: #232528;       /* slightly lighter card parts */
+  --border: #2f3236;        /* subtle borders */
+  --orange: #e8672a;        /* Martian orange accent */
+  --orange-soft: #f08a56;   /* lighter orange for small text */
+  --text: #f4ece4;          /* warm white */
+  --muted: #9a9590;         /* muted grey */
+  --real: #5fbf7a;          /* badge: real data */
+  --calc: #e0b23c;          /* badge: calculation */
+  --sim: #5aa0e6;           /* badge: simulation */
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--orange-soft);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+/* ---------- Top bar and menu ---------- */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  background: rgba(18, 19, 20, 0.96);
+  border-bottom: 1px solid var(--border);
+  border-top: 3px solid var(--orange);
+}
+
+.brand {
+  padding: 10px 16px 4px;
+}
+
+.brand-title {
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: var(--orange);
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+.menu {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.menu a {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.menu a:hover,
+.menu a:focus-visible {
+  border-color: var(--orange);
+  color: var(--orange-soft);
+}
+
+/* ---------- Page layout ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.intro {
+  padding: 8px 0 20px;
+}
+
+.intro h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 6vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.intro p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* ---------- Badge guide ---------- */
+
+.badge-guide {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.badge-guide li {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.badge-real { color: var(--real); }
+.badge-calc { color: var(--calc); }
+.badge-sim  { color: var(--sim); }
+
+/* ---------- Section panels ---------- */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+  margin-bottom: 16px;
+  scroll-margin-top: 120px;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel h2::first-letter {
+  color: var(--orange);
+}
+
+.coming {
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* ---------- The map: the centrepiece ---------- */
+
+#map {
+  border-color: var(--orange);
+}
+
+#map .coming {
+  margin-bottom: 12px;
+}
+
+.map-box {
+  width: 100%;
+  height: 65vh;
+  min-height: 420px;
+  background: #0d0e0f;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  overflow: hidden;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 16px 32px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.footer p {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Larger screens (tablets, computers) ---------- */
+
+@media (min-width: 700px) {
+  .brand {
+    padding-left: 24px;
+  }
+  .menu {
+    padding-left: 24px;
+  }
+  .badge-guide {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .panel {
+    padding: 24px;
+  }
+  .map-box {
+    height: 70vh;
+  }
+  }

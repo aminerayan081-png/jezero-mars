@@ -1,0 +1,71 @@
+/* =========================================================
+   JEZERO - map.css
+   Styles for the interactive map in section 2 only.
+   Loaded AFTER style.css and reuses its colour variables.
+   Nothing here changes any other section.
+   ========================================================= */
+
+.map-intro {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* The placeholder box centred its text. The map draws its own
+   content, so switch the centring off while the map is running. */
+#jezero-map {
+  display: block;
+}
+
+/* If the map cannot load, show the message in the middle of the box. */
+#jezero-map.map-failed {
+  display: flex;
+  padding: 16px;
+  text-align: center;
+}
+
+/* ---------- Information panel under the map ---------- */
+
+.map-info {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.map-info h3 {
+  margin: 14px 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-soft);
+}
+
+.map-info h3:first-child {
+  margin-top: 0;
+}
+
+.map-info p {
+  margin: 0 0 4px;
+}
+
+.map-readout {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.map-small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+
+.map-status-ok {
+  color: var(--real);
+}
+
+.map-status-bad {
+  color: var(--calc);
+}

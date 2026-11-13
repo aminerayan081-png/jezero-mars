@@ -4,47 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>JEZERO | Mars Exploration &amp; EVA Planning System</title>
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-      box-sizing: border-box;
-      background: #120a07;
-      color: #f2e6d9;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      letter-spacing: 0.4em;
-      color: #e2703a;
-    }
-    h2 {
-      margin: 12px 0 0;
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      font-weight: normal;
-      color: #c9a45c;
-    }
-    .status {
-      margin-top: 32px;
-      padding: 12px 18px;
-      border: 1px solid #6b3a22;
-      border-radius: 6px;
-      color: #b8a090;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>JEZERO</h1>
-  <h2>MARS EXPLORATION &amp; EVA PLANNING SYSTEM</h2>
-  <p class="status">Status: under construction. No scientific data has been added yet.</p>
+
+  <header class="top-bar">
+    <div class="brand">
+      <div class="brand-title">JEZERO</div>
+      <div class="brand-subtitle">MARS EXPLORATION &amp; EVA PLANNING SYSTEM</div>
+    </div>
+    <nav class="menu" aria-label="Main menu">
+      <a href="#overview">Overview</a>
+      <a href="#map">Map</a>
+      <a href="#geology">Geology</a>
+      <a href="#hazards">Hazards</a>
+      <a href="#rover">Rover</a>
+      <a href="#planner">Routes</a>
+      <a href="#eva">EVA</a>
+      <a href="#survival">Survival</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h1>Exploring Jezero Crater</h1>
+      <p>An educational website made by a student team. Every piece of information is labelled so you can tell real data from calculations and simulations.</p>
+      <ul class="badge-guide">
+        <li><span class="badge badge-real">REAL DATA</span> Published by NASA or USGS, with the source named.</li>
+        <li><span class="badge badge-calc">CALCULATION</span> Worked out by us from real data, with the method shown.</li>
+        <li><span class="badge badge-sim">SIMULATION</span> A hypothetical, educational scenario. Not real.</li>
+      </ul>
+    </section>
+
+    <section id="overview" class="panel">
+      <h2>1. Mission Overview</h2>
+      <p class="coming">Coming soon: why Perseverance is at Jezero Crater, where the crater is, and the mission's main goals. Every fact will name its source.</p>
+    </section>
+
+    <section id="map" class="panel">
+      <h2>2. Interactive Jezero Map</h2>
+      <p class="coming">Coming soon: a map you can zoom and move, with switchable layers.</p>
+      <div id="jezero-map" class="map-box">
+        <p>The map will appear here.</p>
+      </div>
+    </section>
+
+    <section id="geology" class="panel">
+      <h2>3. Geological Exploration</h2>
+      <p class="coming">Coming soon: pick an area and learn what it is, why scientists study it, and what it can tell us about Mars' past.</p>
+    </section>
+
+    <section id="hazards" class="panel">
+      <h2>4. Terrain &amp; Hazards</h2>
+      <p class="coming">Coming soon: the hazard map, its legend, and an honest note about what it can and cannot tell us. Where we have no data, this section will say so.</p>
+    </section>
+
+    <section id="rover" class="panel">
+      <h2>5. Perseverance Rover</h2>
+      <p class="coming">Coming soon: the rover's documented locations, findings and photographs, with dates and credits.</p>
+    </section>
+
+    <section id="planner" class="panel">
+      <h2>6. Route Planner</h2>
+      <p class="coming">Planned if time allows: straight-line distance between documented places. It will be labelled as a planning exercise, not an approved NASA route.</p>
+    </section>
+
+    <section id="eva" class="panel">
+      <h2>7. Human EVA Simulation</h2>
+      <p class="coming">Planned if time allows: a hypothetical astronaut scenario with every assumption shown. It will not represent real NASA equipment.</p>
+    </section>
+
+    <section id="survival" class="panel">
+      <h2>8. Survival &amp; Emergency Guide</h2>
+      <p class="coming">Planned if time allows: an educational look at Mars' environment and the kinds of problems explorers would face. These will not be official NASA procedures.</p>
+    </section>
+
+    <section id="sources" class="panel">
+      <h2>9. Scientific Sources</h2>
+      <p class="coming">Coming soon: a full list of every source we use, and an honest list of this project's limitations.</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Student educational project. Not affiliated with or endorsed by NASA or USGS. Work in progress.</p>
+  </footer>
+
 </body>
 </html>

@@ -761,8 +761,54 @@
         </section>
     <section id="planner" class="panel">
       <h2>6. Route Planner</h2>
-      <p class="coming">Planned if time allows: straight-line distance between documented places. It will be labelled as a planning exercise, not an approved NASA route.</p>
-    </section>
+            <p class="rt-intro"><span class="badge badge-calc">CALCULATION</span> <span class="badge badge-sim">SIMULATION</span> Choose a start and a destination from places in and around Jezero Crater. The distance is a calculation from their Mars coordinates. The route is a planning exercise only, not an approved NASA route.</p>
+
+      <div class="rt-notice" role="note">
+        <strong>This is a straight-line distance.</strong> It is the shortest path over the surface of a sphere the size of Mars, ignoring hills, rocks and craters. A real drive would be longer, and nothing here means a route is safe. The coordinates are rounded to 0.01 degrees (about 0.6 km), so distances of a few kilometres or less are rough.
+      </div>
+
+      <div class="rt-tool">
+        <div class="rt-field">
+          <label for="rt-start">Start</label>
+          <select id="rt-start"></select>
+        </div>
+        <div class="rt-field">
+          <label for="rt-end">Destination</label>
+          <select id="rt-end"></select>
+        </div>
+        <div class="rt-actions">
+          <button type="button" id="rt-go" class="rt-btn rt-btn-main">Calculate distance</button>
+          <button type="button" id="rt-show" class="rt-btn" hidden>Show on the map</button>
+        </div>
+        <p id="rt-msg" class="rt-msg" aria-live="polite">Pick two different places, then tap Calculate distance.</p>
+      </div>
+
+      <div id="rt-result" class="rt-result" hidden>
+        <p class="rt-label">Straight-line distance</p>
+        <p class="rt-big"><span id="rt-km">0</span> km</p>
+        <p id="rt-pair" class="rt-small"></p>
+        <p class="rt-small"><span class="badge badge-calc">CALCULATION</span> <span id="rt-method"></span></p>
+
+        <details class="rt-details">
+          <summary>How is the distance calculated?</summary>
+          <p>We turn each place&rsquo;s latitude and longitude into a position on a sphere, then measure the shortest arc between the two positions (the haversine formula). The sphere has Mars&rsquo; radius of 3,396.19 km, the value USGS uses for its Mars maps. Earth&rsquo;s radius would give the wrong answer, so we do not use it. Mars is not a perfect sphere, so this is a close approximation, not a survey measurement.</p>
+        </details>
+
+        <div class="rt-block">
+          <h3>Possible terrain challenges <span class="badge badge-note">OUR EXPLANATION</span></h3>
+          <p class="rt-small">We have no slope, rock or ground-firmness data along this line, so we cannot tell you what is actually there. These notes come from where the two places are and from NASA findings in Section 4.</p>
+          <ul id="rt-terrain" class="rt-list"></ul>
+        </div>
+
+        <div class="rt-block">
+          <h3>About the two places <span class="badge badge-real">REAL DATA</span></h3>
+          <ul id="rt-places" class="rt-list"></ul>
+        </div>
+
+        <p class="rt-small rt-example">Real drives are longer than straight lines. In one NASA example (see Section 4), the rover drove 759 m across a boulder field where the straight-line gap was 520 m.</p>
+      </div>
+
+      <p class="rt-sources">Sources: <a href="https://pubs.usgs.gov/sim/3464/sim3464_pamphlet.pdf" target="_blank" rel="noopener">USGS Scientific Investigations Map 3464, pamphlet (Sun and Stack, 2020)</a> &middot; <a href="https://en.wikipedia.org/wiki/Octavia_E._Butler_Landing" target="_blank" rel="noopener">Wikipedia, Octavia E. Butler Landing (cites NASA)</a></p>    </section>
 
     <section id="eva" class="panel">
       <h2>7. Human EVA Simulation</h2>

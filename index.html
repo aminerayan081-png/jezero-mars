@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="map.css">
+  <link rel="stylesheet" href="geology.css">
 </head>
 <body>
 
@@ -68,48 +69,133 @@
 
     <section id="geology" class="panel">
       <h2>3. Geological Exploration</h2>
-      <p class="coming">Coming soon: pick an area and learn what it is, why scientists study it, and what it can tell us about Mars' past.</p>
-    </section>
+      <p class="geo-intro"><span class="badge badge-real">REAL DATA</span> Four features of Jezero Crater that NASA&rsquo;s Perseverance rover and orbiting spacecraft have studied. Each card explains what the feature is, what scientists found, what it tells us about ancient Mars, and why it could matter for people exploring Mars one day.</p>
+      <p class="geo-intro">Facts come from NASA, USGS and published studies, with sources under each card. Boxes marked <span class="badge badge-note">OUR EXPLANATION</span> are our own reasoning from those findings, not official NASA plans. Science keeps changing, so some answers are still debated.</p>
 
-    <section id="hazards" class="panel">
-      <h2>4. Terrain &amp; Hazards</h2>
-      <p class="coming">Coming soon: the hazard map, its legend, and an honest note about what it can and cannot tell us. Where we have no data, this section will say so.</p>
-    </section>
+      <div class="geo-grid">
 
-    <section id="rover" class="panel">
-      <h2>5. Perseverance Rover</h2>
-      <p class="coming">Coming soon: the rover's documented locations, findings and photographs, with dates and credits.</p>
-    </section>
+        <article class="geo-card">
+          <figure class="geo-figure">
+            <a href="https://www.jpl.nasa.gov/news/nasas-perseverance-sheds-more-light-on-jezero-craters-watery-past/" target="_blank" rel="noopener">
+              <img src="https://www.nasa.gov/wp-content/uploads/2021/10/pia24814-3-1041.jpg" onerror="this.onerror=null;this.style.display='none'" alt="Annotated orbital map of the Jezero delta showing the rover's location, the Kodiak butte and the delta scarps" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Annotated orbital map showing the rover&rsquo;s location, the Kodiak butte and the delta scarps (NASA, October 2021). Credit: NASA/JPL-Caltech/University of Arizona/USGS.</figcaption>
+          </figure>
+          <div class="geo-body">
+            <p class="geo-kicker">Feature 1 of 4 &middot; The whole crater</p>
+            <h3>The ancient lake and river</h3>
+            <p class="geo-summary">A river once flowed into Jezero and filled it with a lake. The lake has dried up.</p>
 
-    <section id="planner" class="panel">
-      <h2>6. Route Planner</h2>
-      <p class="coming">Planned if time allows: straight-line distance between documented places. It will be labelled as a planning exercise, not an approved NASA route.</p>
-    </section>
+            <h4>In short</h4>
+            <p>Jezero is a crater about 45 km (28 miles) wide. Long ago a river carried water, sand and mud into it, and a lake formed. The river dropped its load where it entered the lake and built a fan-shaped pile called a delta.</p>
 
-    <section id="eva" class="panel">
-      <h2>7. Human EVA Simulation</h2>
-      <p class="coming">Planned if time allows: a hypothetical astronaut scenario with every assumption shown. It will not represent real NASA equipment.</p>
-    </section>
+            <h4>What scientists found</h4>
+            <ul>
+              <li>Rover images of layers in the delta confirmed that a river and a lake were really here. This was reported in the journal <em>Science</em> in 2021.</li>
+              <li>An ancient river valley called Neretva Vallis, about 400 m wide, was carved by water flowing into the crater.</li>
+              <li>Early on, the lake was high enough to spill over the eastern rim. Later it rose and fell by tens of metres and finally disappeared.</li>
+              <li>NASA says some landforms at Jezero date back as far as 3.6 billion years.</li>
+            </ul>
 
-    <section id="survival" class="panel">
-      <h2>8. Survival &amp; Emergency Guide</h2>
-      <p class="coming">Planned if time allows: an educational look at Mars' environment and the kinds of problems explorers would face. These will not be official NASA procedures.</p>
-    </section>
+            <div class="geo-mars">
+              <h4>Why it matters for understanding ancient Mars</h4>
+              <p>It shows that liquid water stayed on the surface of Mars long enough to build a delta. NASA chose Jezero in 2018 because a lake-and-delta system like this could preserve signs of past life. Whether life ever existed there is still unknown.</p>
+            </div>
 
-    <section id="sources" class="panel">
-      <h2>9. Scientific Sources</h2>
-      <p class="coming">Coming soon: a full list of every source we use, and an honest list of this project's limitations.</p>
-    </section>
+            <div class="geo-human">
+              <h4>Why it could matter for human exploration <span class="badge badge-note">OUR EXPLANATION</span></h4>
+              <p>Knowing where and when water flowed helps planners decide which parts of Mars have the most interesting history, so that a crew&rsquo;s limited time can be spent well. It does not mean there is usable water at Jezero today. The lake is gone, and this section has no data on water there now.</p>
+            </div>
 
-  </main>
+            <p class="geo-sources">Sources: <a href="https://www.jpl.nasa.gov/news/nasas-perseverance-sheds-more-light-on-jezero-craters-watery-past/" target="_blank" rel="noopener">NASA/JPL, October 2021</a> &middot; <a href="https://www.jpl.nasa.gov/news/nasa-announces-landing-site-for-mars-2020-rover/" target="_blank" rel="noopener">NASA/JPL, landing site announcement, 2018</a> &middot; <a href="https://www.jpl.nasa.gov/news/nasa-says-mars-rover-discovered-potential-biosignature-last-year/" target="_blank" rel="noopener">NASA/JPL, September 2025</a></p>
+          </div>
+        </article>
 
-  <footer class="footer">
-    <p>Student educational project. Not affiliated with or endorsed by NASA or USGS. Work in progress.</p>
-  </footer>
+        <article class="geo-card">
+          <figure class="geo-figure">
+            <a href="https://science.nasa.gov/resource/perseverance-view-of-the-delta-in-jezero-crater/" target="_blank" rel="noopener">
+              <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/resources/detail_files/2/5/25695_PIA24485_K4_ZCAM_main_sol004_Delta_Remnant_unannotated.jpg?w=900&amp;fit=clip&amp;crop=faces%2Cfocalpoint" onerror="this.onerror=null;this.src='https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/resources/detail_files/2/5/25695_PIA24485_K4_ZCAM_main_sol004_Delta_Remnant_unannotated.jpg?w=1648&amp;h=1200&amp;fit=clip&amp;crop=faces%2Cfocalpoint'" alt="A dark brown hill, the Kodiak delta remnant, rising behind a rocky plain on Mars with a large boulder in the foreground" width="900" height="655" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Kodiak, a leftover piece of the delta, seen by Mastcam-Z from the landing site on 22 February 2021. It is about 2.3 km away and roughly 200 m across. The boulder in front is about 2 m wide. Credit: NASA/JPL-Caltech/ASU/MSSS.</figcaption>
+          </figure>
+          <div class="geo-body">
+            <p class="geo-kicker">Feature 2 of 4 &middot; Western delta</p>
+            <h3>The western delta and its deposits</h3>
+            <p class="geo-summary">Layers of sand, mud and boulders built up where the river met the lake.</p>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="app.js"></script>
-  <script src="map.js"></script>
+            <h4>In short</h4>
+            <p>On the western side of the crater the delta is cut by long, steep slopes called scarps. They show the delta&rsquo;s layers like pages in a book. Kodiak is a small hill that is a leftover piece of the delta.</p>
 
-</body>
-</html>
+            <h4>What scientists found</h4>
+            <ul>
+              <li>The layers in Kodiak tilt in some places and lie flat in others, just like the layers in river deltas on Earth.</li>
+              <li>The lower parts of the scarps show similar layering. Higher up there are boulders up to about 1.5 m (5 ft) wide that came from highlands outside the crater.</li>
+              <li>The team concludes that powerful flash floods carried the boulders in, with water moving at roughly 6 to 30 km/h (4 to 20 mph).</li>
+              <li>The finest-grained mud at the bottom of the delta may hold the best traces of organic molecules and possible signs of life.</li>
+            </ul>
+
+            <div class="geo-mars">
+              <h4>Why it matters for understanding ancient Mars</h4>
+              <p>The water history was not just a slow, gentle river. It also included sudden, powerful floods, and the lake level changed over time. Fine mud settles in calm water, which is why it is such a promising place to look for preserved chemical clues.</p>
+            </div>
+
+            <div class="geo-human">
+              <h4>Why it could matter for human exploration <span class="badge badge-note">OUR EXPLANATION</span></h4>
+              <p>Material carried in from a wide area can bring many rock types to one place, which NASA highlighted when it chose Jezero. That is valuable for explorers with limited time. The same terrain also has hazards: NASA described boulders, cliffs and wind-blown sand traps at Jezero, so steep scarps and boulder fields would need careful route planning.</p>
+              <p>A 2022 NASA planetary-protection presentation also says crewed missions cannot be fully sealed off and that crews will be exposed to Martian material, so contamination has to be managed. Places that may hold organic traces would need special care.</p>
+            </div>
+
+            <p class="geo-sources">Sources: <a href="https://www.jpl.nasa.gov/news/nasas-perseverance-sheds-more-light-on-jezero-craters-watery-past/" target="_blank" rel="noopener">NASA/JPL, October 2021</a> &middot; <a href="https://www.jpl.nasa.gov/news/nasa-announces-landing-site-for-mars-2020-rover/" target="_blank" rel="noopener">NASA/JPL, landing site announcement, 2018</a> &middot; <a href="https://ntrs.nasa.gov/api/citations/20220006192/downloads/ScienceObjectivesHumanMars_PPGuidelines_2022May.pdf" target="_blank" rel="noopener">NASA planetary protection presentation, 2022 (PDF)</a> &middot; <a href="https://science.nasa.gov/resource/perseverance-view-of-the-delta-in-jezero-crater/" target="_blank" rel="noopener">Image page (NASA)</a></p>
+          </div>
+        </article>
+
+        <article class="geo-card">
+          <figure class="geo-figure">
+            <a href="https://science.nasa.gov/resource/perseverance-rovers-view-of-south-seitah" target="_blank" rel="noopener">
+              <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/downloadable_items/4/6/46674_PIA24816a.jpg?w=900&amp;fit=clip" onerror="this.onerror=null;this.src='https://assets.science.nasa.gov/content/dam/science/psd/mars/downloadable_items/4/6/46674_PIA24816a.jpg'" alt="Wide labelled panorama of the South Séítah area on the floor of Jezero Crater, with ridges, sand and distant hills" width="900" height="506" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Mosaic of 84 Mastcam-Z images of the &ldquo;South S&eacute;&iacute;tah&rdquo; area, taken 12 September 2021 (sol 201). Labels mark the delta front, a ridge nicknamed Faillefeu and the peak Santa Cruz. Credit: NASA/JPL-Caltech/ASU/MSSS.</figcaption>
+          </figure>
+          <div class="geo-body">
+            <p class="geo-kicker">Feature 3 of 4 &middot; Crater floor</p>
+            <h3>The crater floor: M&aacute;az and S&eacute;&iacute;tah</h3>
+            <p class="geo-summary">The floor is made of rock that cooled from molten rock. Water changed it later.</p>
+
+            <h4>In short</h4>
+            <p>Under the delta, Jezero&rsquo;s floor is not lake mud. It is igneous rock, which means rock that formed from cooled molten rock. Perseverance found two layers. The lower one, S&eacute;&iacute;tah, is coarse-grained and rich in olivine, a mineral that crystallises from molten rock. It formed slowly at the bottom of a body of magma. The layer above it, M&aacute;az, is probably lava flows, or the matching part of the same magma body.</p>
+
+            <h4>What scientists found</h4>
+            <ul>
+              <li>Thin coatings of iron and magnesium carbonate sit between the mineral grains. This points to water rich in carbon dioxide, in conditions where water was scarce.</li>
+              <li>Two kinds of salt, sulfates and perchlorates, fill tiny holes in the rock. They were probably left behind later, when salty water (brine) dried up near the surface.</li>
+              <li>Rock cores from here are stored on the rover in case they can be returned to Earth.</li>
+            </ul>
+
+            <div class="geo-mars">
+              <h4>Why it matters for understanding ancient Mars</h4>
+              <p>These rocks record two stories in one place: how the crater floor first formed from molten rock, and how water changed it afterwards. That gives scientists a timeline, with a volcanic floor first and water arriving later.</p>
+            </div>
+
+            <div class="geo-human">
+              <h4>Why it could matter for human exploration <span class="badge badge-note">OUR EXPLANATION</span></h4>
+              <p>Perchlorates are a safety issue. A 2013 study in the <em>International Journal of Astrobiology</em> said perchlorate in Martian soil could be a critical chemical hazard to astronauts, although it might also be a source of oxygen. Finding perchlorates in Jezero&rsquo;s rocks helps scientists learn where these salts occur, which is useful for planning how to protect future crews and equipment.</p>
+            </div>
+
+            <p class="geo-sources">Sources: <a href="https://doi.org/10.1126/science.abo2196" target="_blank" rel="noopener">Farley et al. 2022, Science</a> &middot; <a href="https://pubs.usgs.gov/publication/70236904" target="_blank" rel="noopener">USGS record of the study</a> &middot; <a href="https://www.cambridge.org/core/journals/international-journal-of-astrobiology/article/abs/perchlorate-on-mars-a-chemical-hazard-and-a-resource-for-humans/E4906FAD7F45A9AE8212B9198C6FD4AB" target="_blank" rel="noopener">Davila et al. 2013</a> &middot; <a href="https://science.nasa.gov/resource/perseverance-rovers-view-of-south-seitah" target="_blank" rel="noopener">Image page (NASA)</a></p>
+          </div>
+        </article>
+
+        <article class="geo-card">
+          <figure class="geo-figure">
+            <a href="https://science.nasa.gov/blog/reading-the-rocks-the-importance-of-the-margin-carbonate-unit-on-mars" target="_blank" rel="noopener">
+              <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/images/mepjpl/sol905_locationmap_20230907-web.jpg?w=900&amp;fit=clip&amp;crop=faces%2Cfocalpoint" onerror="this.onerror=null;this.src='https://assets.science.nasa.gov/dynamicimage/assets/science/psd/mars/images/mepjpl/sol905_locationmap_20230907-web.jpg?w=1400&amp;h=898&amp;fit=clip&amp;crop=faces%2Cfocalpoint'" alt="Orbital map view of Jezero Crater showing the positions of the Perseverance rover and the Ingenuity helicopter next to a band of light, fractured rock" width="900" height="577" loading="lazy" decoding="async">
+            </a>
+            <figcaption>Orbital view from September 2023 showing the approximate positions of Perseverance and the Ingenuity helicopter. The fractured, light-toned rock about 400 m ahead of the rover is the margin unit. This is a map view, not a close-up. Credit: NASA/JPL-Caltech.</figcaption>
+          </figure>
+          <div class="geo-body">
+            <p class="geo-kicker">Feature 4 of 4 &middot; Crater rim</p>
+            <h3>The carbonate-rich margin</h3>
+            <p class="geo-summary">A band of carbonate-rich rock along the inside of the western crater rim.</p>
+
+            <h4>In short</h4>
+            <p>Along the inner edge of the western rim there is

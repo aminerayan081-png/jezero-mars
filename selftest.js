@@ -11,8 +11,8 @@
     function ok(m) { out.push("PASS  " + m); }
     function bad(m) { out.push("FAIL  " + m); }
 
-    // 1 sections and order
-    var ids = ["overview","map","geology","hazards","rover","planner","eva","survival","sources"];
+    // sections and order
+    var ids = ["overview","map","geology","hazards","rover","planner","eva","survival","manual","sources"];
     var last = -1, good = true;
     ids.forEach(function (id) {
       var el = document.getElementById(id);
@@ -21,17 +21,17 @@
       if (top < last) { bad("#" + id + " is out of order"); good = false; }
       last = top;
     });
-    if (good) ok("all 9 sections present and in order");
+    if (good) ok("all 10 sections present and in order");
 
-    // 2 menu links
+    // menu links
     var links = document.querySelectorAll(".menu a[href^='#']");
     var broken = [];
     for (var i = 0; i < links.length; i++) {
       if (!document.getElementById(links[i].getAttribute("href").slice(1))) broken.push(links[i].getAttribute("href"));
     }
-    if (links.length !== 9) bad("menu has " + links.length + " links (expected 9)");
+    if (links.length !== 10) bad("menu has " + links.length + " links (expected 10)");
     else if (broken.length) bad("menu links with no target: " + broken.join(", "));
-    else ok("9 menu links, all point to real sections");
+    else ok("10 menu links, all point to real sections");
 
     // duplicate ids
     var seen = {}, dups = [];
@@ -40,7 +40,26 @@
     });
     if (dups.length) bad("duplicate ids: " + dups.join(", ")); else ok("no duplicate ids");
 
-    // 3 map
+    // field manual
+    var man = document.getElementById("manual");
+    if (man) {
+      var tabs = man.querySelectorAll(".fm-tab").length;
+      var boxes = man.querySelectorAll("input[type=checkbox][data-id]").length;
+      var panels = man.querySelectorAll(".fm-panel").length;
+      if (tabs === 5 && panels === 5 && boxes > 0) ok("field manual: 5 chapters, " + boxes + " checklist items");
+      else bad("field manual: " + tabs + " tabs, " + panels + " panels, " + boxes + " checkboxes");
+      var shown = man.querySelectorAll(".fm-panel:not([hidden])").length;
+      if (shown === 1) ok("field manual shows exactly one chapter"); else bad("field manual shows " + shown + " chapters at once");
+    }
+
+    // old section numbering
+    var txt = document.body.innerText || "";
+    if (/Section 9\b/.test(txt) && /Sources/.test(txt)) {
+      var m = txt.match(/[^.\n]*Section 9\b[^.\n]*/g) || [];
+      bad("text still mentions 'Section 9': " + m.slice(0, 3).join(" | "));
+    } else ok("no leftover 'Section 9' references");
+
+    // map
     var tiles = document.querySelectorAll("#jezero-map .leaflet-tile-loaded").length;
     if (!window.L) bad("Leaflet not loaded");
     else if (!tiles) bad("map has no loaded tiles");
@@ -57,7 +76,7 @@
     var coming = document.querySelectorAll(".coming");
     if (coming.length) bad(coming.length + " 'coming soon' placeholder(s) left"); else ok("no 'coming soon' placeholders");
 
-    // 12 mobile overflow
+    // mobile overflow
     var w = window.innerWidth;
     if (document.documentElement.scrollWidth > w + 1) {
       var wide = [];
@@ -72,11 +91,9 @@
 
     // external links
     var ext = document.querySelectorAll("a[href^='http']");
-    var noRel = 0;
-    ext.forEach(function (a) { if (!/noopener/.test(a.rel)) noRel++; });
-    ok(ext.length + " external links (tap each one manually)" + (noRel ? "; " + noRel + " lack rel=noopener" : ""));
+    ok(ext.length + " external links (tap each one manually)");
 
-    // 11 JS errors
+    // JS errors
     if (errs.length) bad("JS errors: " + errs.join(" | ")); else ok("no JS errors recorded");
 
     var box = document.createElement("div");

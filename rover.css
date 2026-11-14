@@ -1,0 +1,263 @@
+/* =========================================================
+   JEZERO - rover.css
+   Styles for Section 5 (Perseverance Rover) only.
+   Every rule starts with #rover, so no other section changes.
+   Uses the colour variables already defined in style.css.
+   ========================================================= */
+
+#rover .rov-intro {
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+#rover .badge-note {
+  color: var(--orange-soft);
+}
+
+#rover a {
+  color: var(--orange-soft);
+}
+
+/* ---------- Notice box ---------- */
+
+#rover .rov-notice {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--calc);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+/* ---------- Content blocks ---------- */
+
+#rover .rov-block {
+  margin: 0 0 18px;
+  padding: 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+#rover .rov-block > h3 {
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+#rover .rov-block p {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+}
+
+#rover .rov-lead {
+  color: var(--muted);
+}
+
+/* ---------- Images ---------- */
+
+#rover .rov-figure {
+  margin: 0 0 12px;
+  background: #0d0e0f;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#rover .rov-figure a {
+  display: block;
+}
+
+#rover .rov-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: contain;
+  background: #0d0e0f;
+}
+
+#rover .rov-figure figcaption {
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---------- Quick facts ---------- */
+
+#rover .rov-facts {
+  margin: 0 0 8px;
+  padding-left: 1.2rem;
+}
+
+#rover .rov-facts li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Card grid ---------- */
+
+#rover .rov-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+#rover .rov-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#rover .rov-card .rov-figure {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+}
+
+#rover .rov-body {
+  padding: 14px;
+}
+
+#rover .rov-kicker {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-soft);
+}
+
+#rover .rov-card h4 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+#rover .rov-label {
+  margin: 12px 0 2px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--calc);
+}
+
+#rover .rov-card ul {
+  margin: 0 0 8px;
+  padding-left: 1.2rem;
+}
+
+#rover .rov-card li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+/* ---------- Numbered steps ---------- */
+
+#rover .rov-steps {
+  list-style: none;
+  counter-reset: rovstep;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+#rover .rov-steps li {
+  counter-increment: rovstep;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 10px 12px 10px 52px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+#rover .rov-steps li::before {
+  content: counter(rovstep);
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #121314;
+  font-weight: 700;
+}
+
+#rover .rov-steps strong {
+  display: block;
+  color: var(--text);
+}
+
+/* ---------- "Our explanation" box ---------- */
+
+#rover .rov-own {
+  margin: 14px 0 8px;
+  padding: 10px 12px;
+  background: var(--panel);
+  border: 1px dashed var(--orange);
+  border-radius: 6px;
+}
+
+#rover .rov-own .rov-label {
+  margin-top: 0;
+  color: var(--orange-soft);
+}
+
+#rover .rov-own p {
+  margin-bottom: 0;
+}
+
+/* ---------- Caution box (for the biosignature finding) ---------- */
+
+#rover .rov-caution {
+  margin: 10px 0 8px;
+  padding: 10px 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--calc);
+  border-radius: 6px;
+  font-size: 0.92rem;
+}
+
+#rover .rov-caution p {
+  margin: 0;
+}
+
+/* ---------- Sources ---------- */
+
+#rover .rov-sources {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+#rover .rov-block p.rov-sources {
+  font-size: 0.78rem;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 900px) {
+  #rover .rov-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  #rover .rov-block {
+    padding: 18px;
+  }
+}

@@ -391,4 +391,122 @@
     $("time").className = over ? "ev-over" : "";
 
     gauge("o2", S.o2, "about " + (S.o2 / 100 * cfg.o2 / cfg.crew).toFixed(1) + " h left");
-    gauge("bat", S.bat, "about " + (S.bat 
+    gauge("bat", S.bat, "about " + (S.bat / 100 * cfg.bat).toFixed(1) + " h left");
+    gauge("th", S.th, "about " + (S.th / 100 * TH_H).toFixed(1) + " h left");
+    gauge("hp", S.hp, S.hp > 80 ? "Intact" : S.hp > 50 ? "Scuffed" : S.hp > 25 ? "Damaged" : "Failing");
+
+    $("dot").style.left = S.pos + "%";
+    $("pause").textContent = S.paused ? "Resume" : "Pause";
+    $("pause").disabled = S.over;
+    $("speed").textContent = "Speed: " + cfg.speed + "x";
+
+    if (S.act) {
+      $("actname").textContent = ACT[S.act.key].label + " (" + S.act.done + " of " + S.act.total + " min)";
+      $("actbar").style.width = (S.act.done / S.act.total * 100) + "%";
+    } else {
+      $("actname").textContent = S.ev ? "Waiting for your decision" : "Waiting for your order";
+      $("actbar").style.width = "0%";
+    }
+
+    var ev = $("event");
+    if (S.ev) {
+      var h = "<h3>" + S.ev.title + "</h3><p>" + S.ev.text + "</p>";
+      S.ev.opts.forEach(function (o, i) {
+        h += '<button type="button" class="ev-opt" data-opt="' + i + '"><b>' + o.l + "</b><small>" + o.d + "</small></button>";
+      });
+      ev.innerHTML = h;
+      ev.hidden = false;
+    } else { ev.hidden = true; }
+
+    var busy = S.act || S.ev || S.paused || S.over;
+    ORDER.forEach(function (k) {
+      var need = ACT[k].need, ok = need === "any" || need === S.loc;
+      var c = cost(actMin(k), ACT[k].inten);
+      $("a-" + k).disabled = !ok || !!busy;
+      $("e-" + k).textContent = ok
+        ? "about " + actMin(k) + " min, oxygen -" + c.o2.toFixed(0) + "%, battery -" + c.bat.toFixed(0) + "%"
+        : (need === "site" ? "Go to the site first" : "Only at the base");
+    });
+
+    var lh = "";
+    S.log.slice(0, 25).forEach(function (r) { lh += '<li class="' + r.cls + '"><b>T+' + clock(r.t) + "</b> " + r.text + "</li>"; });
+    $("log").innerHTML = lh;
+  }
+
+  function gauge(id, v, sub) {
+    var g = $("g-" + id);
+    var c = v > 50 ? "#5fbf7a" : v > 25 ? "#f0b429" : "#e5484d";
+    g.style.setProperty("--p", v.toFixed(1));
+    g.style.setProperty("--c", c);
+    g.className = "ev-gauge" + (v <= 25 ? " ev-pulse" : "");
+    $("v-" + id).textContent = Math.round(v) + "%";
+    $("s-" + id).textContent = sub;
+  }
+
+  /* ----- report ----- */
+  function buildReport() {
+    var c = S.counts, u = S.used;
+    var title, cls, text;
+    var narrow = S.o2 < 10 || S.bat < 10 || S.th < 10 || S.hp < 30;
+    var science = c.sample * 10 + c.photo * 3 + c.rock * 5;
+    if (S.reason) {
+      title = "MISSION FAILED (simulated)"; cls = "bad";
+      text = "In this simulation the " + reasonText(S.reason) + " before the crew got back to the base.";
+    } else if (narrow) {
+      title = "NARROW SUCCESS"; cls = "warn";
+      text = "The crew returned, but at least one resource was almost gone.";
+    } else if (S.el > cfg.dur * 60) {
+      title = "SUCCESS, BUT OVER TIME"; cls = "warn";
+      text = "The crew returned safely but took longer than planned.";
+    } else if (science === 0) {
+      title = "SAFE RETURN, NO SCIENCE"; cls = "warn";
+      text = "The crew returned safely but did no science work.";
+    } else {
+      title = "MISSION SUCCESS"; cls = "good";
+      text = "The crew returned safely, on time, with science results.";
+    }
+    var names = { o2: "oxygen", bat: "battery", th: "heat reserve", hp: "suit integrity" };
+    var low = "o2", vals = { o2: S.o2, bat: S.bat, th: S.th, hp: S.hp };
+    Object.keys(vals).forEach(function (k) { if (vals[k] < vals[low]) { low = k; } });
+    var lesson = S.reason
+      ? "Lesson: turn back earlier. Plan the return trip before you spend resources on science."
+      : "Your tightest resource was " + names[low] + " (" + Math.round(vals[low]) + "% left). Try a different plan to see how it changes.";
+    var emh = "";
+    S.emerg.forEach(function (e) { emh += "<li>" + e.title + " - you chose: " + e.choice + "</li>"; });
+    if (!emh) { emh = "<li>None this time.</li>"; }
+
+    $("rep").innerHTML =
+      '<h3>Mission report</h3><p class="ev-outcome ev-' + cls + '"><b>' + title + "</b><br>" + text + "</p>" +
+      '<table class="ev-table">' +
+      "<tr><th>Mission duration</th><td>" + clock(S.el) + " (plan " + cfg.dur + ":00)</td></tr>" +
+      "<tr><th>Destination</th><td>" + SITES[cfg.site].name + "</td></tr>" +
+      "<tr><th>Crew and style</th><td>" + cfg.crew + " astronaut(s), " + WORK[cfg.work].name + "</td></tr>" +
+      "<tr><th>Oxygen used</th><td>" + u.o2.toFixed(0) + "% (about " + (u.o2 / 100 * cfg.o2).toFixed(1) + " person-hours)</td></tr>" +
+      "<tr><th>Battery used</th><td>" + u.bat.toFixed(0) + "%</td></tr>" +
+      "<tr><th>Heat reserve used</th><td>" + u.th.toFixed(0) + "%</td></tr>" +
+      "<tr><th>Suit damage</th><td>" + u.hp.toFixed(0) + "%</td></tr>" +
+      "<tr><th>Activities done</th><td>Walk " + c.walk + ", samples " + c.sample + ", photos " + c.photo + ", rocks examined " + c.rock + ", rests " + c.rest + ", returns " + (c.ret + c.fast) + "</td></tr>" +
+      "<tr><th>Samples collected</th><td>" + c.sample + "</td></tr>" +
+      "<tr><th>Science score</th><td>" + science + " (sample 10, rock 5, photo 3)</td></tr>" +
+      "<tr><th>Emergencies</th><td><ul>" + emh + "</ul></td></tr></table>" +
+      '<p class="ev-lesson">' + lesson + "</p>" +
+      '<div class="ev-tools"><button type="button" id="ev-again" class="ev-btn ev-main">Run again, same settings</button>' +
+      '<button type="button" id="ev-change" class="ev-btn">Change settings</button></div>';
+  }
+
+  host.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("button") : null;
+    if (!b || !host.contains(b)) { return; }
+    if (b.dataset.act) { begin(b.dataset.act); }
+    else if (b.dataset.opt !== undefined) { resolve(Number(b.dataset.opt)); }
+    else if (b.id === "ev-start" || b.id === "ev-again") { startMission(); }
+    else if (b.id === "ev-pause") { togglePause(); }
+    else if (b.id === "ev-speed") {
+      cfg.speed = cfg.speed === 5 ? 15 : cfg.speed === 15 ? 30 : 5;
+      $("i-speed").value = String(cfg.speed);
+      if (S.timer) { run(); }
+      render();
+    }
+    else if (b.id === "ev-restart" || b.id === "ev-change") { if (S) { stop(); } showScreen("cfg"); }
+  });
+})();

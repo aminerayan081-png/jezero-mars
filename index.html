@@ -863,6 +863,195 @@
       <p class="coming">Planned if time allows: an educational look at Mars' environment and the kinds of problems explorers would face. These will not be official NASA procedures.</p>
     </section>
 
+      <section id="manual" class="panel">
+  <h2>9. Astronaut Field Manual</h2>
+  <p class="fm-lead"><b>Human Exploration &amp; Surface Operations Reference.</b> A hypothetical field manual for future crews working in Jezero Crater: preparation, operations, environment, emergencies and post-EVA steps.</p>
+  <p class="geo-intro"><span class="badge badge-real">REAL DATA</span> marks facts with a source. <span class="badge badge-sim">PROPOSED CONCEPT</span> marks our own educational ideas. This is an educational mission-support prototype, not certified operational software, and nothing here is an approved NASA procedure.</p>
+
+  <figure class="fm-diagram">
+    <svg viewBox="0 0 360 150" role="img" aria-label="Field manual workflow: Chapter 1 prepare, Chapter 2 operate, Chapter 5 post-EVA, with Chapters 3 and 4 as reference at every stage">
+      <defs><marker id="fm-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#e8672a"/></marker></defs>
+      <rect x="6" y="14" width="96" height="54" rx="8" fill="#0b0b0c" stroke="#e8672a"/>
+      <text x="54" y="37" fill="#e8672a" font-size="11" text-anchor="middle" font-family="monospace">CH 01</text>
+      <text x="54" y="55" fill="#f1ebe3" font-size="12" text-anchor="middle">Prepare</text>
+      <rect x="132" y="14" width="96" height="54" rx="8" fill="#0b0b0c" stroke="#e8672a"/>
+      <text x="180" y="37" fill="#e8672a" font-size="11" text-anchor="middle" font-family="monospace">CH 02</text>
+      <text x="180" y="55" fill="#f1ebe3" font-size="12" text-anchor="middle">Operate</text>
+      <rect x="258" y="14" width="96" height="54" rx="8" fill="#0b0b0c" stroke="#e8672a"/>
+      <text x="306" y="37" fill="#e8672a" font-size="11" text-anchor="middle" font-family="monospace">CH 05</text>
+      <text x="306" y="55" fill="#f1ebe3" font-size="12" text-anchor="middle">Post-EVA</text>
+      <line x1="104" y1="41" x2="128" y2="41" stroke="#e8672a" stroke-width="2" marker-end="url(#fm-arrow)"/>
+      <line x1="230" y1="41" x2="254" y2="41" stroke="#e8672a" stroke-width="2" marker-end="url(#fm-arrow)"/>
+      <rect x="6" y="92" width="348" height="46" rx="8" fill="#0b0b0c" stroke="#9a948c" stroke-dasharray="5 4"/>
+      <text x="180" y="112" fill="#f1ebe3" font-size="12" text-anchor="middle">CH 03 Environment &#183; CH 04 Emergency reference</text>
+      <text x="180" y="129" fill="#9a948c" font-size="11" text-anchor="middle">consulted at every stage</text>
+      <line x1="54" y1="70" x2="54" y2="90" stroke="#9a948c" stroke-dasharray="3 3"/>
+      <line x1="180" y1="70" x2="180" y2="90" stroke="#9a948c" stroke-dasharray="3 3"/>
+      <line x1="306" y1="70" x2="306" y2="90" stroke="#9a948c" stroke-dasharray="3 3"/>
+    </svg>
+    <figcaption>How the five chapters fit together (our own concept diagram).</figcaption>
+  </figure>
+
+  <div class="fm-progress">
+    <div class="fm-progress-top"><span>Checklist progress</span><b class="fm-overall">0 of 0 items checked</b></div>
+    <div class="fm-bar"><span></span></div>
+    <button type="button" class="fm-reset">Reset all checklists</button>
+  </div>
+
+  <div class="fm-tabs" role="tablist" aria-label="Field manual chapters">
+    <button type="button" class="fm-tab" role="tab" data-ch="1">01 Pre-EVA <small>0/0</small></button>
+    <button type="button" class="fm-tab" role="tab" data-ch="2">02 Surface Ops <small>0/0</small></button>
+    <button type="button" class="fm-tab" role="tab" data-ch="3">03 Environment <small>0/0</small></button>
+    <button type="button" class="fm-tab" role="tab" data-ch="4">04 Emergency <small>0/0</small></button>
+    <button type="button" class="fm-tab" role="tab" data-ch="5">05 Post-EVA <small>0/0</small></button>
+  </div>
+
+  <!-- CHAPTER 1 -->
+  <div class="fm-panel" data-ch="1" role="tabpanel">
+    <h3>Chapter 01: Pre-EVA Preparation</h3>
+    <p class="fm-sub"><span class="badge badge-sim">PROPOSED CONCEPT</span> A generic readiness sequence before leaving the habitat. Real limits and procedures come from official mission documents, not from this page.</p>
+    <h4 class="fm-h">Checklist</h4>
+    <ul class="fm-check">
+      <li><label><input type="checkbox" data-id="c1-1"><span>Mission objectives and tasks are agreed with the crew and mission control.</span></label></li>
+      <li><label><input type="checkbox" data-id="c1-2"><span>Suit inspected following the official suit procedures.</span></label></li>
+      <li><label><input type="checkbox" data-id="c1-3"><span>Equipment and tools checked against the mission equipment list.</span></label></li>
+      <li><label><input type="checkbox" data-id="c1-4"><span>Oxygen and battery readings confirmed against the mission's official limits.</span></label></li>
+      <li><label><input type="checkbox" data-id="c1-5"><span>Communication check completed with crewmates and mission control.</span></label></li>
+      <li><label><input type="checkbox" data-id="c1-6"><span>Route, turnaround plan and fallback plan agreed before leaving.</span></label></li>
+    </ul>
+    <h4 class="fm-h">Topics</h4>
+    <details><summary>Mission objectives</summary><div class="fm-body"><p>Every EVA starts with a clear purpose: what to observe, where to go and what to bring back. Clear objectives let a crew decide what to drop if time or resources run short.</p></div></details>
+    <details><summary>Spacesuit inspection</summary><div class="fm-body"><p>A suit check looks for visible damage, wear and correct fit before depressurised work begins. The actual inspection steps and acceptance limits belong to the suit's official documentation. This prototype lists none.</p></div></details>
+    <details><summary>Equipment checklist</summary><div class="fm-body"><p>Tools, sample containers and navigation aids are confirmed against a written list so nothing important is forgotten once the crew is outside.</p></div></details>
+    <details><summary>Oxygen and battery monitoring</summary><div class="fm-body"><p>Consumables are checked before departure and watched throughout. Any numeric limits are set by real mission rules. Section 7's simulator uses invented teaching values, not real limits.</p></div></details>
+    <details><summary>Communication checks</summary><div class="fm-body"><p>Radio checks confirm that the crew can hear each other and mission control. Agreeing a fallback beforehand matters, because the Mars-Earth signal delay prevents real-time conversation with Earth.</p></div></details>
+    <details><summary>Preparation before leaving the habitat</summary><div class="fm-body"><p>A final walk-through: confirm the plan, the buddy arrangement and the expected return time, then check each other's suits.</p></div></details>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="fm-panel" data-ch="2" role="tabpanel" hidden>
+    <h3>Chapter 02: Surface Operations</h3>
+    <p class="fm-sub"><span class="badge badge-sim">PROPOSED CONCEPT</span> Good habits for working outside the habitat.</p>
+    <h4 class="fm-h">Checklist</h4>
+    <ul class="fm-check">
+      <li><label><input type="checkbox" data-id="c2-1"><span>Current position confirmed against the planned route.</span></label></li>
+      <li><label><input type="checkbox" data-id="c2-2"><span>Terrain ahead assessed before moving on.</span></label></li>
+      <li><label><input type="checkbox" data-id="c2-3"><span>Observations and sample locations recorded.</span></label></li>
+      <li><label><input type="checkbox" data-id="c2-4"><span>Crewmates checked in at the agreed intervals.</span></label></li>
+      <li><label><input type="checkbox" data-id="c2-5"><span>Status report sent to mission control.</span></label></li>
+      <li><label><input type="checkbox" data-id="c2-6"><span>Consumables compared with the plan, and the turnaround point respected.</span></label></li>
+    </ul>
+    <h4 class="fm-h">Topics</h4>
+    <details><summary>Navigation and location awareness</summary><div class="fm-body"><p>Crews need to know where they are and how to get back. Section 2's map shows real orbital imagery, but Section 6's distances are straight-line only, not validated walking routes.</p></div></details>
+    <details><summary>Terrain assessment</summary><div class="fm-body"><p>NASA describes boulders, cliffs and wind-blown sand traps at Jezero (see Section 3's sources). Slopes and loose ground need judging on the spot.</p></div></details>
+    <details><summary>Scientific observations and sample collection</summary><div class="fm-body"><p>Perseverance collects and stores rock cores in sealed tubes. Human crews would also need to record where each sample came from, so its geological context is not lost.</p></div></details>
+    <details><summary>Team coordination</summary><div class="fm-body"><p>Working in pairs, with agreed hand-offs and check-ins, means someone always knows what the others are doing.</p></div></details>
+    <details><summary>Communication with mission control</summary><div class="fm-body"><p>Signals between Mars and Earth take minutes, so crews would send clear status updates and cannot rely on instant answers.</p></div></details>
+    <details><summary>Monitoring mission resources</summary><div class="fm-body"><p>Time, oxygen, power and sample capacity are tracked against the plan. The key habit is deciding early when to stop, not when resources are almost gone.</p></div></details>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="fm-panel" data-ch="3" role="tabpanel" hidden>
+    <h3>Chapter 03: Environmental Conditions</h3>
+    <p class="fm-sub">Hazard reference cards. Each separates what is established from what is our own concept. We give no numeric thresholds here.</p>
+    <div class="fm-haz-grid">
+      <article class="fm-haz"><h5>Martian dust</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> Dust settling on surfaces, including solar panels, has been seen on past Mars missions. Martian soil contains perchlorates (Davila et al., 2013).</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Plan for keeping dust out of the habitat and for cleaning equipment.</p></article>
+      <article class="fm-haz"><h5>Radiation</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> Curiosity's RAD instrument measured the radiation environment on the Martian surface (Hassler et al., 2014).</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Limits and exposure rules must come from official space-agency standards. We do not state any.</p></article>
+      <article class="fm-haz"><h5>Extreme temperatures</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> Mars is much colder than Earth on average, and temperatures vary with time of day, season and location (NASA Mars Fact Sheet).</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Plan EVAs around the thermal conditions given in real mission forecasts.</p></article>
+      <article class="fm-haz"><h5>Low gravity</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> Mars surface gravity is about 3.71 m/s², roughly 38% of Earth's (NASA Mars Fact Sheet).</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Reduced weight changes how people move and carry loads, so crews would need to adapt.</p></article>
+      <article class="fm-haz"><h5>Rocky terrain and obstacles</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> NASA describes boulders, cliffs and sand traps at Jezero. Delta scarps are steep, and boulders up to about 1.5 m wide were found in the delta (NASA/JPL, 2021).</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Crews would choose routes that avoid steep or boulder-strewn ground.</p></article>
+      <article class="fm-haz"><h5>Environmental effects on equipment</h5>
+        <p><span class="badge badge-real">REAL DATA</span> <b>Fact:</b> Dust on surfaces, including solar panels, has affected past Mars missions.</p>
+        <p><span class="badge badge-sim">PROPOSED CONCEPT</span> <b>Concept:</b> Equipment checks would include looking for dust build-up and wear.</p></article>
+    </div>
+    <h4 class="fm-h">Checklist</h4>
+    <ul class="fm-check">
+      <li><label><input type="checkbox" data-id="c3-1"><span>Current dust, thermal and radiation conditions checked with mission control.</span></label></li>
+      <li><label><input type="checkbox" data-id="c3-2"><span>Route avoids steep slopes and boulder fields where possible.</span></label></li>
+      <li><label><input type="checkbox" data-id="c3-3"><span>Equipment inspected for dust and wear.</span></label></li>
+    </ul>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div class="fm-panel" data-ch="4" role="tabpanel" hidden>
+    <h3>Chapter 04: Field Emergency Reference</h3>
+    <p class="fm-sub"><span class="badge badge-sim">PROPOSED CONCEPT</span> Generic walkthroughs for learning. They are <b>not</b> approved NASA protocols, and real procedures would come from official mission rules. Tap <b>Next step</b> to reveal each step.</p>
+    <article class="fm-scn"><h5>Scenario: Communication failure</h5><p>You can no longer reach crewmates or mission control.</p>
+      <ol class="fm-steps">
+        <li>Stop and stay calm. Confirm the problem is not a simple setting or connection issue.</li>
+        <li>Try the backup communication method from your pre-EVA plan.</li>
+        <li>Use any pre-agreed visual signals with a nearby crewmate.</li>
+        <li>Follow the lost-communication plan agreed in Chapter 1. This is why that plan is made before leaving.</li>
+        <li>Begin the return to the habitat and report once contact is restored.</li>
+      </ol></article>
+    <article class="fm-scn"><h5>Scenario: Spacesuit malfunction</h5><p>A warning appears or the suit behaves unexpectedly.</p>
+      <ol class="fm-steps">
+        <li>Stop activity and tell your crewmate.</li>
+        <li>Check the suit displays and follow the official suit procedure for that warning.</li>
+        <li>Report the status to mission control.</li>
+        <li>Move toward the habitat with your crewmate's help, as the official procedure directs.</li>
+        <li>After returning, log the event so the suit can be properly examined.</li>
+      </ol></article>
+    <article class="fm-scn"><h5>Scenario: Equipment failure</h5><p>A tool or instrument stops working during the task.</p>
+      <ol class="fm-steps">
+        <li>Stop and make the area safe. Do not force damaged equipment.</li>
+        <li>Report the failure and what you were doing.</li>
+        <li>Decide whether the task can continue safely with a backup tool, or must be dropped.</li>
+        <li>Record what happened and move on to the next safe objective, or return.</li>
+      </ol></article>
+    <h4 class="fm-h">Reference cards</h4>
+    <details><summary>Unexpected environmental conditions</summary><div class="fm-body"><p>If conditions change, such as dust, visibility or thermal changes, check with mission control and consider shortening the EVA. The thresholds for doing so come from real mission rules.</p></div></details>
+    <details><summary>Emergency return considerations</summary><div class="fm-body"><p>The further from the habitat, the longer a return takes, which is why turnaround points are set in advance. Our straight-line distances (Section 6) are not real return times.</p></div></details>
+    <h4 class="fm-h">Checklist</h4>
+    <ul class="fm-check">
+      <li><label><input type="checkbox" data-id="c4-1"><span>Fallback communication and lost-comm plan agreed.</span></label></li>
+      <li><label><input type="checkbox" data-id="c4-2"><span>Emergency return route and turnaround point agreed.</span></label></li>
+      <li><label><input type="checkbox" data-id="c4-3"><span>Everyone knows the official procedures for suit and equipment faults.</span></label></li>
+    </ul>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div class="fm-panel" data-ch="5" role="tabpanel" hidden>
+    <h3>Chapter 05: Post-EVA Procedures</h3>
+    <p class="fm-sub"><span class="badge badge-sim">PROPOSED CONCEPT</span> Closing out an EVA so the next one starts safely.</p>
+    <h4 class="fm-h">Checklist</h4>
+    <ul class="fm-check">
+      <li><label><input type="checkbox" data-id="c5-1"><span>All crew returned to the habitat and accounted for.</span></label></li>
+      <li><label><input type="checkbox" data-id="c5-2"><span>Suits and equipment inspected for damage and dust.</span></label></li>
+      <li><label><input type="checkbox" data-id="c5-3"><span>Consumables replenished according to official procedures.</span></label></li>
+      <li><label><input type="checkbox" data-id="c5-4"><span>Samples labelled, logged and stored as the mission's sample plan directs.</span></label></li>
+      <li><label><input type="checkbox" data-id="c5-5"><span>Mission report written and sent.</span></label></li>
+      <li><label><input type="checkbox" data-id="c5-6"><span>Crew debrief held and lessons recorded.</span></label></li>
+    </ul>
+    <h4 class="fm-h">Topics</h4>
+    <details><summary>Return to habitat</summary><div class="fm-body"><p>The crew re-enters in the order set by the mission plan, and every person is accounted for before anything else is done.</p></div></details>
+    <details><summary>Equipment inspection</summary><div class="fm-body"><p>Dust and wear are checked now, while problems are easy to spot, rather than before the next EVA.</p></div></details>
+    <details><summary>Resource replenishment</summary><div class="fm-body"><p>Oxygen, power and other consumables are restored following official procedures, so the next crew starts with a full, checked kit.</p></div></details>
+    <details><summary>Scientific sample handling</summary><div class="fm-body"><p>Perseverance seals its samples in tubes. Likewise, human-collected samples would be labelled and logged. NASA's planetary-protection work also says crews cannot be fully sealed off from Martian material, so contamination must be managed (see Section 3's sources).</p></div></details>
+    <details><summary>Mission reporting</summary><div class="fm-body"><p>A written record of what was done, found and broken gives mission control and later crews reliable information.</p></div></details>
+    <details><summary>Crew debriefing</summary><div class="fm-body"><p>A short group discussion captures what went well and what should change next time.</p></div></details>
+  </div>
+
+  <div class="fm-refs">
+    <b style="color:#f1ebe3">Sources for this section</b><br>
+    <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html" target="_blank" rel="noopener noreferrer">NASA Mars Fact Sheet</a> (gravity, temperature context)<br>
+    Hassler et al. (2014), <a href="https://doi.org/10.1126/science.1244797" target="_blank" rel="noopener noreferrer">Mars' surface radiation environment measured with Curiosity</a>, Science<br>
+    Davila et al. (2013), <a href="https://www.cambridge.org/core/journals/international-journal-of-astrobiology/article/abs/perchlorate-on-mars-a-chemical-hazard-and-a-resource-for-humans/E4906FAD7F45A9AE8212B9198C6FD4AB" target="_blank" rel="noopener noreferrer">Perchlorate on Mars</a>, Int. J. Astrobiology<br>
+    <a href="https://www.jpl.nasa.gov/news/nasas-perseverance-sheds-more-light-on-jezero-craters-watery-past/" target="_blank" rel="noopener noreferrer">NASA/JPL, October 2021</a> (delta, boulders)<br>
+    <a href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener noreferrer">NASA Mars 2020 Perseverance mission</a> (sample collection)
+  </div>
+  <p class="fm-disclaimer">Educational mission-support prototype. Not certified operational software, not an approved NASA procedure, and not for real astronaut training. It states no suit specifications, oxygen limits or radiation thresholds. Always use official mission documentation.</p>
+                                                                                                                                                                                                 </section>    
     <section id="sources">
   <div class="src-wrap">
     <div class="src-eyebrow">Section 09 · Documentation Centre</div>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="survival.css">
   <script src="survival-data.js" defer></script>
   <script src="survival.js" defer></script>
+  <link rel="stylesheet" href="sources.css">
 </head>
 <body>
 
@@ -827,11 +828,199 @@
       <p class="coming">Planned if time allows: an educational look at Mars' environment and the kinds of problems explorers would face. These will not be official NASA procedures.</p>
     </section>
 
-    <section id="sources" class="panel">
-      <h2>9. Scientific Sources</h2>
-      <p class="coming">Coming soon: a full list of every source we use, and an honest list of this project's limitations.</p>
-    </section>
+    <section id="sources">
+  <div class="src-wrap">
+    <div class="src-eyebrow">Section 09 · Documentation Centre</div>
+    <h2>Scientific Sources &amp; References</h2>
+    <p class="src-intro">JEZERO combines published Mars science with our own calculations and clearly hypothetical simulations. This centre shows which is which, and where every real source comes from.</p>
 
+    <div class="src-legend">
+      <div><span class="src-tag t-real">Scientific source</span><br>Data or findings published by NASA, USGS or peer-reviewed research.</div>
+      <div><span class="src-tag t-calc">Our calculation</span><br>Math performed by this website using published constants.</div>
+      <div><span class="src-tag t-sim">Hypothetical</span><br>Invented educational values. Not real mission data.</div>
+    </div>
+
+    <!-- 1 NASA -->
+    <h3><span class="src-num">01</span> NASA Data Sources</h3>
+    <p class="src-sub">Imagery, mapping and mission information.</p>
+    <div class="src-grid">
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>NASA Mars Trek</h4>
+        <p class="src-cite">NASA / JPL Solar System Treks Project. Web-based Mars mapping portal.</p>
+        <p class="src-used"><b>Used for:</b> Mars orbital imagery in our Interactive Jezero Map (Section 2).</p>
+        <a class="src-link" href="https://trek.nasa.gov/mars/" target="_blank" rel="noopener noreferrer">Open Mars Trek ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Mars 2020 Perseverance Rover Mission</h4>
+        <p class="src-cite">NASA Science: official mission page.</p>
+        <p class="src-used"><b>Used for:</b> Rover and mission background (Sections 1 and 5).</p>
+        <a class="src-link" href="https://science.nasa.gov/mission/mars-2020-perseverance/" target="_blank" rel="noopener noreferrer">Open mission page ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>NASA Mars Exploration</h4>
+        <p class="src-cite">NASA Science: Mars overview and exploration programme.</p>
+        <p class="src-used"><b>Used for:</b> General Mars context and exploration goals (Section 1).</p>
+        <a class="src-link" href="https://science.nasa.gov/mars/" target="_blank" rel="noopener noreferrer">Open NASA Mars ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>NASA Planetary Data System: Geosciences Node</h4>
+        <p class="src-cite">Archive of calibrated planetary mission data, hosted at Washington University in St. Louis.</p>
+        <p class="src-used"><b>Used for:</b> Where the underlying Mars mission datasets are archived.</p>
+        <a class="src-link" href="https://pds-geosciences.wustl.edu/" target="_blank" rel="noopener noreferrer">Open PDS Geosciences ↗</a>
+      </article>
+    </div>
+
+    <!-- 2 USGS -->
+    <h3><span class="src-num">02</span> USGS Geological Research</h3>
+    <p class="src-sub">Planetary geologic mapping and cartography.</p>
+    <div class="src-grid">
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>USGS Astrogeology Science Center</h4>
+        <p class="src-cite">U.S. Geological Survey. Planetary mapping, cartography and geologic research.</p>
+        <p class="src-used"><b>Used for:</b> Background on planetary cartography and geologic mapping (Sections 2-4).</p>
+        <a class="src-link" href="https://www.usgs.gov/centers/astrogeology-science-center" target="_blank" rel="noopener noreferrer">Open USGS Astrogeology ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Geologic Map of Mars</h4>
+        <p class="src-cite">Tanaka, K.L., et al. (2014). USGS Scientific Investigations Map 3292.</p>
+        <p class="src-used"><b>Used for:</b> Global geologic units and terrain context (Sections 3-4).</p>
+        <a class="src-link" href="https://pubs.usgs.gov/sim/3292/" target="_blank" rel="noopener noreferrer">Open USGS map ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Photogeologic Map of the Perseverance Rover Field Site in Jezero Crater</h4>
+        <p class="src-cite">Stack, K.M., et al. (2020). Space Science Reviews, 216, 127.</p>
+        <p class="src-used"><b>Used for:</b> Geologic units and terrain of Jezero (Sections 3-4).</p>
+        <a class="src-link" href="https://doi.org/10.1007/s11214-020-00739-x" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+    </div>
+
+    <!-- 3 Publications -->
+    <h3><span class="src-num">03</span> Scientific Publications</h3>
+    <p class="src-sub">Peer-reviewed research behind our geology and rover content.</p>
+    <div class="src-grid">
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Fluvial sedimentary deposits on Mars: Ancient deltas in a crater lake in the Nili Fossae region</h4>
+        <p class="src-cite">Fassett, C.I. &amp; Head, J.W. (2005). Geophysical Research Letters, 32, L14201.</p>
+        <p class="src-used"><b>Supports:</b> Evidence for the ancient delta and crater lake.</p>
+        <a class="src-link" href="https://doi.org/10.1029/2005GL023456" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Assessing the mineralogy of the watershed and fan deposits of the Jezero crater paleolake system, Mars</h4>
+        <p class="src-cite">Goudge, T.A., et al. (2015). Journal of Geophysical Research: Planets, 120.</p>
+        <p class="src-used"><b>Supports:</b> Mineralogy of the lake watershed and delta fan deposits.</p>
+        <a class="src-link" href="https://doi.org/10.1002/2014JE004782" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Orbital identification of carbonate-bearing rocks on Mars</h4>
+        <p class="src-cite">Ehlmann, B.L., et al. (2008). Science, 322, 1828.</p>
+        <p class="src-used"><b>Supports:</b> Carbonate-bearing materials detected from orbit.</p>
+        <a class="src-link" href="https://doi.org/10.1126/science.1164759" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Mars 2020 Mission Overview</h4>
+        <p class="src-cite">Farley, K.A., et al. (2020). Space Science Reviews, 216, 142.</p>
+        <p class="src-used"><b>Supports:</b> Perseverance mission goals and science objectives.</p>
+        <a class="src-link" href="https://doi.org/10.1007/s11214-020-00762-y" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Perseverance rover reveals an ancient delta-lake system and flood deposits at Jezero crater, Mars</h4>
+        <p class="src-cite">Mangold, N., et al. (2021). Science, 374, 711.</p>
+        <p class="src-used"><b>Supports:</b> Rover-based evidence of the delta, lake and sedimentary deposits.</p>
+        <a class="src-link" href="https://doi.org/10.1126/science.abl4051" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Aqueously altered igneous rocks sampled on the floor of Jezero crater, Mars</h4>
+        <p class="src-cite">Farley, K.A., et al. (2022). Science, 377, eabo2196.</p>
+        <p class="src-used"><b>Supports:</b> Evidence of water interacting with crater-floor rocks.</p>
+        <a class="src-link" href="https://doi.org/10.1126/science.abo2196" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+      <article class="src-card">
+        <span class="src-tag t-real">Scientific source</span>
+        <h4>Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015</h4>
+        <p class="src-cite">Archinal, B.A., et al. (2018). Celestial Mechanics and Dynamical Astronomy, 130, 22.</p>
+        <p class="src-used"><b>Supports:</b> Standard Mars radius used in our distance calculation.</p>
+        <a class="src-link" href="https://doi.org/10.1007/s10569-017-9805-5" target="_blank" rel="noopener noreferrer">Open via DOI ↗</a>
+      </article>
+    </div>
+
+    <!-- 4 Methodology -->
+    <h3><span class="src-num">04</span> Our Methodology</h3>
+    <p class="src-sub">How JEZERO uses science. Tap each item to expand.</p>
+
+    <details>
+      <summary>Map data &amp; imagery</summary>
+      <div class="src-body">
+        <span class="src-tag t-real">Scientific source</span>
+        <p>The Interactive Jezero Map displays Mars orbital imagery from NASA Mars Trek. We display it; we did not produce or alter the imagery.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Geographic coordinates</summary>
+      <div class="src-body">
+        <span class="src-tag t-real">Scientific source</span>
+        <p>Location coordinates come from the map's coordinate system and published geologic maps. Tapping the map reports the coordinates of that point.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Mars distance calculation</summary>
+      <div class="src-body">
+        <span class="src-tag t-calc">Our calculation</span>
+        <p>The Route Planner computes great-circle (straight-line surface) distance between two coordinate pairs using Mars' radius. Mars' mean radius is a published constant (IAU report, listed above).</p>
+        <p>The formula and the arithmetic are ours. The result is a geometric distance, not a measured one.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Route planning</summary>
+      <div class="src-body">
+        <span class="src-tag t-calc">Our calculation</span>
+        <p>Route Planner results are straight-line distances between two named locations. They do not account for slopes, boulders, dunes, crater walls or traversability.</p>
+      </div>
+    </details>
+    <details>
+      <summary>EVA simulation assumptions</summary>
+      <div class="src-body">
+        <span class="src-tag t-sim">Hypothetical</span>
+        <p>Oxygen, battery, suit condition, crew size, durations and emergency events are invented, simplified values chosen for teaching. They are not NASA suit specifications.</p>
+      </div>
+    </details>
+    <details>
+      <summary>Survival simulation assumptions</summary>
+      <div class="src-body">
+        <span class="src-tag t-sim">Hypothetical</span>
+        <p>Scenarios and outcomes in the Survival &amp; Emergency Guide are simplified models. General topics (thin atmosphere, radiation, dust, cold) reflect real Martian conditions, but thresholds and outcomes are illustrative.</p>
+      </div>
+    </details>
+
+    <!-- 5 Limitations -->
+    <h3><span class="src-num">05</span> Project Limitations</h3>
+    <p class="src-sub">What this prototype can and cannot do.</p>
+    <ul class="src-limits">
+      <li>The Route Planner calculates simplified straight-line distances, not validated or navigable rover paths.</li>
+      <li>The EVA simulator uses hypothetical assumptions, not actual NASA suit or life-support specifications.</li>
+      <li>Survival scenarios are simplified educational models, not certified life-support predictions.</li>
+      <li>This website does not control, command or receive live data from any rover or spacecraft.</li>
+      <li>Map imagery has limited resolution and may not show hazards a real mission would need to assess.</li>
+      <li>Our summaries of scientific findings are simplified; the original publications are the authoritative source.</li>
+    </ul>
+
+    <div class="src-disclaimer">
+      <strong style="color:#f1ebe3">Disclaimer.</strong> JEZERO is an independent student prototype created for NASA Space Apps Challenge Casablanca 2026. It is not an official NASA product, has not been reviewed or endorsed by NASA, USGS or any publisher listed here, and must not be used for real mission planning or astronaut training. Source names are cited only for attribution.
+    </div>
+  </div>
+    </section>
   </main>
 
   <footer class="footer">

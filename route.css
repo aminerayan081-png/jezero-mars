@@ -1,0 +1,233 @@
+/* =========================================================
+   JEZERO - route.css
+   Styles for Section 6 (Route Planner) only.
+   Every rule starts with #planner, so no other section changes.
+   Uses the colour variables already defined in style.css.
+   ========================================================= */
+
+#planner .rt-intro {
+  margin: 0 0 12px;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+#planner .badge-note {
+  color: var(--orange-soft);
+}
+
+#planner a {
+  color: var(--orange-soft);
+}
+
+/* ---------- Notice box ---------- */
+
+#planner .rt-notice {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--calc);
+  border-radius: 6px;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+
+/* ---------- The tool ---------- */
+
+#planner .rt-tool {
+  margin: 0 0 16px;
+  padding: 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+#planner .rt-field {
+  margin-bottom: 12px;
+}
+
+#planner .rt-field label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--calc);
+}
+
+#planner .rt-field select {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 10px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#planner .rt-field select:focus-visible,
+#planner .rt-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+#planner .rt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#planner .rt-btn {
+  min-height: 46px;
+  padding: 10px 16px;
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#planner .rt-btn[hidden] {
+  display: none;
+}
+
+#planner .rt-btn-main {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #121314;
+  font-weight: 700;
+}
+
+#planner .rt-msg {
+  margin: 12px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+#planner .rt-msg.rt-warn {
+  color: var(--calc);
+}
+
+/* ---------- Result ---------- */
+
+#planner .rt-result {
+  margin: 0 0 16px;
+  padding: 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--orange);
+  border-radius: var(--radius);
+}
+
+#planner .rt-result[hidden] {
+  display: none;
+}
+
+#planner .rt-label {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--calc);
+}
+
+#planner .rt-big {
+  margin: 2px 0 6px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--orange);
+}
+
+#planner .rt-small {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+#planner .rt-details {
+  margin: 8px 0 12px;
+  padding: 8px 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+#planner .rt-details summary {
+  cursor: pointer;
+  color: var(--orange-soft);
+}
+
+#planner .rt-details p {
+  margin: 8px 0 0;
+}
+
+#planner .rt-block {
+  margin: 14px 0 0;
+  padding: 12px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#planner .rt-block h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+#planner .rt-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+#planner .rt-list li {
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+
+#planner .rt-list strong {
+  color: var(--text);
+}
+
+#planner .rt-coords {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+#planner .rt-example {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Sources ---------- */
+
+#planner .rt-sources {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Larger screens ---------- */
+
+@media (min-width: 700px) {
+  #planner .rt-tool {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 16px;
+  }
+  #planner .rt-actions,
+  #planner .rt-msg {
+    grid-column: 1 / -1;
+  }
+  }

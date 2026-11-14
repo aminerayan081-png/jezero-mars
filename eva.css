@@ -1,0 +1,80 @@
+/* JEZERO - eva.css : Section 7 (EVA Mission Simulator). All classes start with ev- */
+#eva .ev-intro{margin:0 0 14px}
+.ev-card{background:#1a1b1d;border:1px solid #33353a;border-radius:10px;padding:14px;margin:0 0 14px}
+.ev-card h3{margin:14px 0 8px;font-size:1rem}
+.ev-card h3:first-child{margin-top:0}
+.ev-form{display:grid;gap:6px}
+.ev-form label{margin-top:8px;font-size:.92rem}
+.ev-form select,.ev-form input[type=range]{width:100%;min-height:44px;font:inherit;color:inherit;background:#121314;border:1px solid #3a3c41;border-radius:6px;padding:6px}
+.ev-form input[type=range]{accent-color:#e8672a;padding:0}
+.ev-prev{margin:12px 0;padding:10px;border-left:3px solid #e8672a;background:#121314;font-size:.92rem}
+.ev-btn{min-height:44px;padding:8px 14px;font:inherit;font-weight:600;color:inherit;background:#121314;border:1px solid #e8672a;border-radius:6px;cursor:pointer}
+.ev-btn:hover{background:#26201c}
+.ev-main{background:#e8672a;color:#121314}
+.ev-main:hover{background:#f07b40}
+.ev-btn:focus-visible,.ev-act:focus-visible,.ev-opt:focus-visible{outline:3px solid #f5d0b5;outline-offset:2px}
+.ev-btn:disabled,.ev-act:disabled{opacity:.45;cursor:not-allowed}
+#ev-start{width:100%}
+
+.ev-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.ev-stat{display:flex;align-items:center;gap:8px;font-size:1.05rem}
+.ev-led{width:14px;height:14px;border-radius:50%;background:#5fbf7a;box-shadow:0 0 8px currentColor;color:#5fbf7a}
+.ev-led.ev-warn{background:#f0b429;color:#f0b429}
+.ev-led.ev-crit{background:#e5484d;color:#e5484d}
+.ev-led.ev-event{background:#e8672a;color:#e8672a}
+.ev-led.ev-pause{background:#8a8d93;color:#8a8d93;box-shadow:none}
+.ev-clock{text-align:right}
+.ev-clock #ev-time{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.ev-clock small{display:block;opacity:.75}
+.ev-over{color:#f0b429}
+.ev-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.ev-tools .ev-btn{flex:1 1 90px}
+
+.ev-gauges{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:10px 0}
+.ev-g{text-align:center}
+.ev-gauge{--p:100;--c:#5fbf7a;width:92px;height:92px;margin:0 auto 4px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c) calc(var(--p)*1%),#2c2e32 0)}
+.ev-gin{width:70px;height:70px;border-radius:50%;background:#1a1b1d;display:grid;place-items:center;font-size:1.1rem}
+.ev-gname{display:block;font-weight:600;font-size:.9rem}
+.ev-g small{display:block;opacity:.75;font-size:.8rem}
+.ev-pulse{animation:evpulse 1s ease-in-out infinite}
+@keyframes evpulse{50%{opacity:.55}}
+
+.ev-track{display:flex;align-items:center;gap:8px;font-size:.85rem;margin:14px 0 8px}
+.ev-rail{position:relative;flex:1;height:6px;background:#2c2e32;border-radius:3px}
+.ev-rail i{position:absolute;top:-5px;left:0;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#e8672a;border:2px solid #121314;transition:left .2s linear}
+.ev-work{margin:8px 0 12px;font-size:.92rem}
+.ev-bar{height:8px;background:#2c2e32;border-radius:4px;margin-top:6px;overflow:hidden}
+.ev-bar i{display:block;height:100%;width:0;background:#e8672a;transition:width .2s linear}
+
+.ev-event{border:2px solid #e8672a;background:#241a14;border-radius:8px;padding:12px;margin:12px 0}
+.ev-event h3{margin:0 0 6px;color:#f5a36b}
+.ev-event p{margin:0 0 10px}
+.ev-opt,.ev-act{display:block;width:100%;text-align:left;min-height:48px;margin:0 0 8px;padding:10px 12px;font:inherit;color:inherit;background:#121314;border:1px solid #3a3c41;border-radius:6px;cursor:pointer}
+.ev-opt:hover,.ev-act:not(:disabled):hover{border-color:#e8672a;background:#26201c}
+.ev-opt small,.ev-act small{display:block;opacity:.75;font-size:.82rem;margin-top:2px}
+.ev-acts{display:grid;grid-template-columns:1fr;gap:0}
+
+.ev-log{list-style:none;margin:0;padding:0;max-height:260px;overflow-y:auto;font-size:.88rem}
+.ev-log li{padding:6px 0;border-bottom:1px solid #2c2e32}
+.ev-log b{font-variant-numeric:tabular-nums;color:#f5a36b;margin-right:4px}
+.ev-log .good{color:#8fd6a3}.ev-log .warn{color:#f0b429}.ev-log .bad{color:#ff7a7e}
+
+.ev-outcome{padding:12px;border-radius:8px;border:1px solid #3a3c41;background:#121314}
+.ev-outcome.ev-good{border-color:#5fbf7a}.ev-outcome.ev-warn{border-color:#f0b429}.ev-outcome.ev-bad{border-color:#e5484d}
+.ev-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem}
+.ev-table th,.ev-table td{text-align:left;vertical-align:top;padding:8px 6px;border-bottom:1px solid #2c2e32}
+.ev-table th{width:38%;font-weight:600}
+.ev-table ul{margin:0;padding-left:18px}
+.ev-lesson{padding:10px;border-left:3px solid #e8672a;background:#121314}
+.ev-assume{margin:0 0 6px;font-size:.9rem}
+.ev-assume summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:#f5a36b}
+
+@media (min-width:700px){
+  .ev-gauges{grid-template-columns:repeat(4,1fr)}
+  .ev-acts{grid-template-columns:1fr 1fr}
+  .ev-form{grid-template-columns:1fr 1fr;column-gap:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .ev-pulse{animation:none}
+  .ev-rail i,.ev-bar i{transition:none}
+        }

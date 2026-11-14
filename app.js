@@ -165,4 +165,125 @@
 
     function updateScrollOffsets() {
       var space = header.offsetHeight + SETTINGS.spaceBelowBar;
-      for (var n = 0; n < items.length;
+            for (var n = 0; n < items.length; n++) {
+        items[n].section.style.scrollMarginTop = space + "px";
+      }
+    }
+
+    /* --- Slide the menu so the highlighted link stays visible --- */
+
+    function scrollMenuTo(link) {
+      var menuBox = menu.getBoundingClientRect();
+      var linkBox = link.getBoundingClientRect();
+      var delta = linkBox.left - menuBox.left -
+        (menu.clientWidth - link.offsetWidth) / 2;
+      if (typeof menu.scrollTo === "function") {
+        menu.scrollTo({
+          left: menu.scrollLeft + delta,
+          behavior: reduceMotion ? "auto" : "smooth"
+        });
+      } else {
+        menu.scrollLeft += delta;
+      }
+    }
+
+    /* --- Highlight the current section --- */
+
+    var clickLockUntil = 0;
+    var settleTimer = null;
+    var ticking = false;
+
+    function setActive(id) {
+      if (App.currentSectionId === id) {
+        updateDebug();
+        return;
+      }
+      App.currentSectionId = id;
+      for (var k = 0; k < items.length; k++) {
+        var isActive = items[k].section.id === id;
+        items[k].link.classList.toggle("active", isActive);
+        if (isActive) {
+          items[k].link.setAttribute("aria-current", "true");
+          scrollMenuTo(items[k].link);
+        } else {
+          items[k].link.removeAttribute("aria-current");
+        }
+      }
+      updateDebug();
+    }
+
+    function updateCurrent() {
+      var line = header.offsetHeight + SETTINGS.readingLineGap;
+      var currentId = null;
+
+      for (var m = 0; m < items.length; m++) {
+        if (items[m].section.getBoundingClientRect().top <= line) {
+          currentId = items[m].section.id;
+        }
+      }
+
+      /* At the very bottom of the page, the last section counts. */
+      var atBottom = window.innerHeight + window.pageYOffset >=
+        document.documentElement.scrollHeight - 4;
+      if (atBottom) {
+        currentId = items[items.length - 1].section.id;
+      }
+
+      setActive(currentId);
+    }
+
+    function onScroll() {
+      if (Date.now() >= clickLockUntil && !ticking) {
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          ticking = false;
+          updateCurrent();
+        });
+      }
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(updateCurrent, SETTINGS.settleMs);
+    }
+
+    /* --- Tapping a menu link --- */
+
+    for (var c = 0; c < items.length; c++) {
+      (function (item) {
+        item.link.addEventListener("click", function () {
+          clickLockUntil = Date.now() + SETTINGS.clickLockMs;
+          setActive(item.section.id);
+        });
+      })(items[c]);
+    }
+
+    /* --- Start --- */
+
+    updateScrollOffsets();
+    updateCurrent();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", function () {
+      updateScrollOffsets();
+      updateCurrent();
+    });
+    window.addEventListener("load", function () {
+      updateScrollOffsets();
+      updateCurrent();
+    });
+  }
+
+  /* ---------- Start everything ---------- */
+
+  function start() {
+    setupNavigation();
+    started = true;
+    for (var r = 0; r < registry.length; r++) {
+      runModule(registry[r]);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();

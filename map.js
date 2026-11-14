@@ -120,6 +120,7 @@
     });
 
     var counts = { ok: 0, failed: 0 };
+     window.jezeroMap = map;
     var currentDef = LAYERS[0];
 
     function updateStatus() {

@@ -1,0 +1,57 @@
+/* sources.css — Section 9 only. Everything is scoped under #sources. */
+#sources{
+  --s-bg:#0e0e10; --s-card:#17171a; --s-line:#2a2a2f;
+  --s-orange:#d9622b; --s-text:#f1ebe3; --s-muted:#9a948c;
+  --s-green:#5fa883; --s-blue:#6a9fd8;
+  background:var(--s-bg); color:var(--s-text);
+  padding:56px 16px; scroll-margin-top:70px;
+}
+#sources *{box-sizing:border-box}
+#sources .src-wrap{max-width:1000px;margin:0 auto}
+#sources .src-eyebrow{color:var(--s-orange);letter-spacing:.18em;font-size:.75rem;text-transform:uppercase}
+#sources h2{font-size:clamp(1.6rem,5vw,2.4rem);margin:.3em 0}
+#sources .src-intro{color:var(--s-muted);line-height:1.6;max-width:700px}
+#sources h3{margin:2.4em 0 .3em;font-size:1.25rem;display:flex;gap:10px;align-items:center}
+#sources h3 .src-num{color:var(--s-orange);font-family:monospace;font-size:.9rem;border:1px solid var(--s-orange);border-radius:6px;padding:2px 7px}
+#sources .src-sub{color:var(--s-muted);margin:0 0 14px;line-height:1.5}
+
+/* legend */
+#sources .src-legend{display:grid;gap:10px;margin-top:22px}
+#sources .src-legend div{background:var(--s-card);border:1px solid var(--s-line);border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5;color:var(--s-muted)}
+
+/* tags */
+#sources .src-tag{display:inline-block;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:99px;border:1px solid;margin-bottom:8px}
+#sources .t-real{color:var(--s-green);border-color:var(--s-green)}
+#sources .t-calc{color:var(--s-blue);border-color:var(--s-blue)}
+#sources .t-sim{color:var(--s-orange);border-color:var(--s-orange)}
+
+/* cards */
+#sources .src-grid{display:grid;gap:12px}
+#sources .src-card{background:var(--s-card);border:1px solid var(--s-line);border-left:3px solid var(--s-orange);border-radius:10px;padding:16px}
+#sources .src-card h4{margin:0 0 4px;font-size:1rem;line-height:1.35}
+#sources .src-cite{color:var(--s-muted);font-size:.85rem;line-height:1.5;margin:0 0 8px}
+#sources .src-used{font-size:.88rem;line-height:1.5;margin:0 0 12px}
+#sources .src-used b{color:var(--s-orange)}
+#sources .src-link{display:inline-block;color:var(--s-text);background:transparent;border:1px solid var(--s-orange);border-radius:8px;padding:9px 14px;font-size:.88rem;text-decoration:none;min-height:40px}
+#sources .src-link:hover,#sources .src-link:focus{background:var(--s-orange);color:#000}
+
+/* expandable method / limits */
+#sources details{background:var(--s-card);border:1px solid var(--s-line);border-radius:10px;margin-bottom:10px}
+#sources summary{cursor:pointer;padding:14px 16px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+#sources summary::-webkit-details-marker{display:none}
+#sources summary::after{content:"+";color:var(--s-orange);font-size:1.3rem;line-height:1}
+#sources details[open] summary::after{content:"–"}
+#sources .src-body{padding:0 16px 16px;color:var(--s-muted);line-height:1.6;font-size:.92rem}
+#sources .src-body p{margin:.5em 0}
+#sources .src-body code{background:#0b0b0c;padding:1px 5px;border-radius:4px;color:var(--s-text)}
+
+#sources .src-limits{padding-left:0;list-style:none;display:grid;gap:10px}
+#sources .src-limits li{background:var(--s-card);border:1px solid var(--s-line);border-radius:10px;padding:14px 16px 14px 44px;position:relative;line-height:1.5;font-size:.92rem}
+#sources .src-limits li::before{content:"!";position:absolute;left:14px;top:14px;width:20px;height:20px;border-radius:50%;background:var(--s-orange);color:#000;font-weight:700;text-align:center;line-height:20px;font-size:.8rem}
+#sources .src-disclaimer{margin-top:28px;padding:16px;border:1px dashed var(--s-orange);border-radius:10px;color:var(--s-muted);font-size:.88rem;line-height:1.6}
+
+@media(min-width:700px){
+  #sources .src-legend{grid-template-columns:repeat(3,1fr)}
+  #sources .src-grid{grid-template-columns:repeat(2,1fr)}
+  #sources{padding:80px 24px}
+                                       }

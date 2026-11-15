@@ -32,10 +32,10 @@
       lon: 77.45,
       zone: "floor",
       note: "NASA lists rocks, cliffs and dune fields among the hazards of the wider landing area. The touchdown spot was reported to be tilted only about 1 degree, with rocks small compared with the rover's wheels (see Section 4).",
-      source: {
-        label: "Wikipedia, citing NASA (5 March 2021)",
-        url: "https://en.wikipedia.org/wiki/Octavia_E._Butler_Landing"
-      }
+            source: {
+        label: "NASA, 5 March 2021 (names the site; coordinates as listed on Wikipedia)",
+        url: "https://www.nasa.gov/press-release/nasa-s-perseverance-drives-on-mars-terrain-for-first-time/"
+            }
     },
     {
       name: "Delta remnant mounds, middle of the crater floor",

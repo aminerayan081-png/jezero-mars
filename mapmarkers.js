@@ -22,11 +22,20 @@
   }
 
   function popupHtml(p) {
+      var ZONE_HAZARD = {
+    floor: "NASA lists rocks, boulder fields, cliffs and dune fields among the hazards of this area.",
+    rim: "On NASA's climb of the rim, part of a 15 to 20 degree hill was far less firm than expected and the wheels had very little grip.",
+    outside: "Our sources say little about the ground here. Any route into the crater would have to cross the rim."
+  };
+
+  function popupHtml(p) {
     return "<b>" + esc(p.name) + "</b><br>" +
       p.lat.toFixed(2) + "\u00B0 N, " + p.lon.toFixed(2) + "\u00B0 E<br>" +
       "Zone: " + ZONES[p.zone].label + "<br>" +
-      "<small>" + esc(p.note) + "<br>Source: " + esc(p.source.label) +
+      "<small>" + esc(p.note) + "<br><b>Hazard note (from Section 4, not a safety rating):</b> " + esc(ZONE_HAZARD[p.zone] || "") +
+      "<br>Source: " + esc(p.source.label) +
       ". Coordinates are rounded to 0.01\u00B0, so the dot is only roughly on the feature.</small>";
+  }
   }
 
   function build(map, places) {
